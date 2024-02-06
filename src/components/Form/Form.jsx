@@ -6,7 +6,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./text.css";
 const MAX_VIDEO_SIZE_MB = 30;
 const MAX_VIDEO_DURATION_SECONDS = 30;
-
+const myUrl = "https://next-eifpe-testing.vercel.app";
 const Form = () => {
   const [formData, setFormData] = useState({
     ID: "",
@@ -81,7 +81,7 @@ const Form = () => {
     }
 
     try {
-      const res = await fetch("/api/data", {
+      const res = await fetch(`${myUrl}/api/data`, {
         method: "POST",
         body: data // Use the FormData object directly
       });
